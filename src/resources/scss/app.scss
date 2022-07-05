@@ -4,6 +4,22 @@ h1 {
 
 .container {
     background-color: bisque;
-    font-size: 1.6rem;
     color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+.button {
+    padding-left: 105px;
 }

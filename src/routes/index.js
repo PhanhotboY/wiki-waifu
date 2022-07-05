@@ -1,10 +1,13 @@
-import newsRouter from './news';
-import siteRouter from './site';
+const newsRouter = require('./news');
+const waifusRouter = require('./waifus');
+const siteRouter = require('./site');
 
 const routes = (app) => {
+    app.use('/waifus', waifusRouter);
+
     app.use('/news', newsRouter);
 
     app.use('/', siteRouter);
 };
 
-export default routes;
+module.exports = routes;
