@@ -1,1 +1,42 @@
-hello from <h3>Home</h3>
+<div
+    id='carouselExampleInterval'
+    class='carousel slide w-75'
+    data-bs-ride='carousel'
+    interval='2000'
+>
+    <div class='carousel-inner'>
+        {{#each info}}
+            <div class='carousel-item {{#if @index}}''{{else}}active{{/if}}' data-bs-interval='2000'>
+                <a href="/waifus/detail/{{this.slug}}">
+                <img
+                    src='{{this.image}}'
+                    class="w-100"
+                    alt='{{this.name}}'
+                />
+                </a>
+                <div class="carousel-caption d-none d-md-block text-danger">
+                    <h5>{{this.name}}</h5>
+                    <p>{{this.anime}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <button
+        class='carousel-control-prev'
+        type='button'
+        data-bs-target='#carouselExampleInterval'
+        data-bs-slide='prev'
+    >
+        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+        <span class='visually-hidden'>Previous</span>
+    </button>
+    <button
+        class='carousel-control-next'
+        type='button'
+        data-bs-target='#carouselExampleInterval'
+        data-bs-slide='next'
+    >
+        <span class='carousel-control-next-icon' aria-hidden='true'></span>
+        <span class='visually-hidden'>Next</span>
+    </button>
+</div>

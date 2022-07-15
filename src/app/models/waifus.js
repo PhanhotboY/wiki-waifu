@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
+const mongooseSlug = require('mongoose-slug-generator');
+const mongooseDelete = require('mongoose-delete');
 
 const schema = mongoose.Schema;
 
+// create Model
 const waifus = new schema(
     {
         name: String,
@@ -13,9 +16,20 @@ const waifus = new schema(
         anime: String,
         seiyuu: String,
         image: String,
-        slug: String,
+        slug: { type: String, slug: 'name', unique: true },
     },
-    { collection: 'waifu_infos' },
+    { collection: 'waifu_infos', timestamps: true },
 );
+
+/*
+ * Plugin
+ */
+// auto generrate slug
+mongoose.plugin(mongooseSlug);
+// soft delete
+waifus.plugin(mongooseDelete, {
+    deletedAt: true,
+    overrideMethods: ['find', 'updateOne', 'countDocuments'],
+});
 
 module.exports = mongoose.model('waifu_info', waifus);

@@ -2,24 +2,89 @@ h1 {
     color: violet;
 }
 
-.container {
+.container,
+#listForm {
     background-color: bisque;
     color: #333;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-top: 28px;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-grow: 1;
+    // justify-content: space-between;
 }
 
 .card-text {
     flex-grow: 1;
 }
 
-.button {
-    padding-left: 105px;
+table.table {
+    border: 1;
+    border-color: #000;
+}
+
+.img {
+    height: min-content;
+    width: 45%;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.mg-r {
+    margin-right: 44px;
+}
+
+.mg-r-99 {
+    margin-right: 99px;
+}
+
+#addBtn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    line-height: 26px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+#scrollUp {
+    position: fixed;
+    right: 48px;
+    bottom: 100px;
+    height: 32px;
+    width: 32px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    text-align: center;
+    color: #333;
+    display: none;
+}
+
+#scrollUp:hover {
+    box-shadow: 2px 2px 6px gray;
+}
+
+input[name='id[]'] {
+    top: 8px;
+    left: 12px;
+}
+
+#replaceElement {
+    display: none;
 }

@@ -1,0 +1,188 @@
+{{#with waifu}}
+    <form
+        method='POST'
+        class='row g-3 needs-validation'
+        action='/waifus/edit/{{slug}}?_method=PUT'
+        novalidate
+    >
+        <div class='col-md-5'>
+            <label for='validationCustom01' class='form-label'>Full name</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom01'
+                value='{{name}}'
+                name='name'
+                required
+            />
+        </div>
+
+        <div class='col-md-6'>
+            <label for='validationCustom02' class='form-label'>Nickname</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom02'
+                value='{{nickName}}'
+                name='nickName'
+                required
+            />
+        </div>
+
+        <div class='col-md-2'>
+            <label for='validationCustomUsername' class='form-label'>Age</label>
+            <div class='input-group has-validation'>
+                <input
+                    type='text'
+                    class='form-control'
+                    id='validationCustomUsername'
+                    aria-describedby='inputGroupPrepend'
+                    value='{{age}}'
+                    name='age'
+                    required
+                />
+            </div>
+        </div>
+
+        <div class='col-md-4'>
+            <label for='validationCustom04' class='form-label'>Date of birth:
+                Month</label>
+            <select
+                class='form-select'
+                id='validationCustom04'
+                name='birthMonth'
+                required
+            >
+                <option selected disabled value=''>Month...</option>
+                <option {{select birthMonth 'January'}}>January</option>
+                <option {{select birthMonth 'February'}}>February</option>
+                <option {{select birthMonth 'March'}}>March</option>
+                <option {{select birthMonth 'April'}}>April</option>
+                <option {{select birthMonth 'May'}}>May</option>
+                <option {{select birthMonth 'June'}}>June</option>
+                <option {{select birthMonth 'July'}}>July</option>
+                <option {{select birthMonth 'August'}}>August</option>
+                <option {{select birthMonth 'September'}}>September</option>
+                <option {{select birthMonth 'Octobor'}}>Octobor</option>
+                <option {{select birthMonth 'November'}}>November</option>
+                <option {{select birthMonth 'December'}}>December</option>
+            </select>
+        </div>
+
+        <div class='col-md-4'>
+            <label for='validationCustom04' class='form-label'>Date</label>
+            <select
+                class='form-select'
+                id='validationCustom04'
+                value='{{birthDay}}'
+                name='birthDay'
+                required
+            >
+                <option selected disabled value=''>Day...</option>
+                <option {{select birthDay '01st'}}>01st</option>
+                <option {{select birthDay '02nd'}}>02nd</option>
+                <option {{select birthDay '03rd'}}>03rd</option>
+                <option {{select birthDay '04th'}}>04th</option>
+                <option {{select birthDay '05th'}}>05th</option>
+                <option {{select birthDay '06th'}}>06th</option>
+                <option {{select birthDay '07th'}}>07th</option>
+                <option {{select birthDay '08th'}}>08th</option>
+                <option {{select birthDay '09th'}}>09th</option>
+                <option {{select birthDay '10th'}}>10th</option>
+                <option {{select birthDay '11th'}}>11th</option>
+                <option {{select birthDay '12th'}}>12th</option>
+                <option {{select birthDay '13th'}}>13th</option>
+                <option {{select birthDay '14th'}}>14th</option>
+                <option {{select birthDay '15th'}}>15th</option>
+                <option {{select birthDay '16th'}}>16th</option>
+                <option {{select birthDay '17th'}}>17th</option>
+                <option {{select birthDay '18th'}}>18th</option>
+                <option {{select birthDay '19th'}}>19th</option>
+                <option {{select birthDay '20th'}}>20th</option>
+                <option {{select birthDay '21th'}}>21th</option>
+                <option {{select birthDay '22th'}}>22th</option>
+                <option {{select birthDay '23th'}}>23th</option>
+                <option {{select birthDay '24th'}}>24th</option>
+                <option {{select birthDay '25th'}}>25th</option>
+                <option {{select birthDay '26th'}}>26th</option>
+                <option {{select birthDay '27th'}}>27th</option>
+                <option {{select birthDay '28th'}}>28th</option>
+                <option {{select birthDay '29th'}}>29th</option>
+                <option {{select birthDay '30th'}}>30th</option>
+                <option {{select birthDay '31th'}}>31th</option>
+            </select>
+        </div>
+
+        <div class='col-md-6'>
+            <label for='validationCustom03' class='form-label'>Hair color</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom03'
+                value='{{hairColor}}'
+                name='hairColor'
+                required
+            />
+        </div>
+
+        <div class='col-md-3'>
+            <label for='validationCustom05' class='form-label'>Height</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom05'
+                value='{{height}}'
+                name='height'
+                required
+            />
+        </div>
+
+        <div class='col-md-6'>
+            <label for='validationCustom05' class='form-label'>Anime</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom05'
+                value='{{anime}}'
+                name='anime'
+                required
+            />
+        </div>
+
+        <div class='col-md-5'>
+            <label for='validationCustom05' class='form-label'>Seiyuu</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom05'
+                value='{{seiyuu}}'
+                name='seiyuu'
+                required
+            />
+        </div>
+
+        <div class='col-md-11'>
+            <label for='validationCustom05' class='form-label'>Image</label>
+            <input
+                type='text'
+                class='form-control'
+                id='validationCustom05'
+                value='{{image}}'
+                name='image'
+                required
+            />
+        </div>
+
+        <div class='col-12'>
+            <a
+                class='btn btn-secondary float-end'
+                href='javascript:history.back()'
+            >Cancel</a>
+            <button
+                class='btn btn-outline-primary float-end me-2'
+                type='submit'
+            >Save</button>
+        </div>
+    </form>
+
+{{/with}}
